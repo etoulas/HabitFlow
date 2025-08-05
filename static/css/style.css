@@ -1,0 +1,332 @@
+/* Custom CSS for Habit Tracker */
+
+:root {
+    --primary-color: #6C5CE7;
+    --success-color: #00B894;
+    --accent-color: #FDCB6E;
+    --background-color: #F8F9FA;
+    --text-color: #2D3436;
+    --neutral-color: #DDD;
+    --border-radius: 8px;
+    --padding: 16px;
+}
+
+body {
+    font-family: 'Inter', 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Custom Bootstrap overrides */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #5b4bd4;
+    border-color: #5b4bd4;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-success {
+    background-color: var(--success-color) !important;
+}
+
+.text-accent {
+    color: var(--accent-color) !important;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Habit Cards */
+.habit-card {
+    border-left: 4px solid var(--primary-color);
+}
+
+/* Stats */
+.stat-item {
+    padding: var(--padding) 0;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Task Cards */
+.task-card {
+    border-left: 4px solid var(--neutral-color);
+    transition: border-color 0.2s ease;
+}
+
+.task-card.task-small {
+    border-left-color: var(--success-color);
+}
+
+.task-card.task-medium {
+    border-left-color: var(--accent-color);
+}
+
+.task-card.task-big {
+    border-left-color: var(--primary-color);
+}
+
+.task-size-badge {
+    font-size: 0.65rem;
+}
+
+/* Task Quick Buttons */
+.task-quick-btn {
+    position: relative;
+    background-color: #f8f9fa;
+    border: 1px solid var(--neutral-color);
+    color: var(--text-color);
+    padding: 4px 8px;
+    font-size: 0.75rem;
+}
+
+.task-quick-btn:hover {
+    background-color: #e9ecef;
+}
+
+.task-size-indicator {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--neutral-color);
+}
+
+.task-quick-btn.task-small .task-size-indicator {
+    background-color: var(--success-color);
+    width: 4px;
+    height: 4px;
+}
+
+.task-quick-btn.task-medium .task-size-indicator {
+    background-color: var(--accent-color);
+    width: 6px;
+    height: 6px;
+}
+
+.task-quick-btn.task-big .task-size-indicator {
+    background-color: var(--primary-color);
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+}
+
+/* Calendar */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 8px;
+    margin-bottom: var(--padding);
+}
+
+.calendar-day {
+    background-color: white;
+    border: 1px solid var(--neutral-color);
+    border-radius: var(--border-radius);
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+    min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.calendar-day:hover {
+    border-color: var(--primary-color);
+}
+
+.calendar-day.today {
+    border-color: var(--primary-color);
+    border-width: 2px;
+    background-color: rgba(108, 92, 231, 0.05);
+}
+
+.calendar-date {
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.calendar-progress {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    justify-content: center;
+    align-items: center;
+    min-height: 20px;
+}
+
+/* Task Indicators */
+.task-indicator {
+    border-radius: 2px;
+    display: inline-block;
+}
+
+.task-indicator.task-small {
+    width: 4px;
+    height: 4px;
+    background-color: var(--success-color);
+    border-radius: 50%;
+}
+
+.task-indicator.task-medium {
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+}
+
+.task-indicator.task-big {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.no-completion {
+    width: 100%;
+    height: 2px;
+    background-color: #e9ecef;
+    border-radius: 1px;
+}
+
+/* Legend */
+.calendar-legend {
+    border-top: 1px solid var(--neutral-color);
+    padding-top: var(--padding);
+}
+
+.legend-item {
+    font-size: 0.8rem;
+    color: #6c757d;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Empty States */
+.empty-state {
+    color: #6c757d;
+}
+
+.empty-icon {
+    font-size: 3rem;
+    opacity: 0.5;
+}
+
+/* Progress Bar */
+.progress {
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    transition: width 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .calendar-grid {
+        grid-template-columns: repeat(7, 1fr);
+    }
+    
+    .calendar-day {
+        min-height: 50px;
+        padding: 4px;
+    }
+    
+    .calendar-date {
+        font-size: 0.8rem;
+    }
+    
+    .stat-number {
+        font-size: 1.2rem;
+    }
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: slideIn 0.3s ease;
+}
+
+/* Focus states for accessibility */
+.btn:focus,
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(108, 92, 231, 0.25);
+}
+
+/* Task actions */
+.task-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.task-actions .btn {
+    padding: 4px 8px;
+}
+
+/* Navbar */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Modal improvements */
+.modal-content {
+    border-radius: var(--border-radius);
+    border: none;
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--neutral-color);
+}
+
+.modal-footer {
+    border-top: 1px solid var(--neutral-color);
+}
