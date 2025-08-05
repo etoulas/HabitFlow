@@ -1,11 +1,30 @@
 {
   "habits": [
     {
-      "id": "1754406269587",
-      "name": "Test Habit",
+      "id": "1754406386346",
+      "name": "Daily Reading",
       "frequency": "daily",
-      "created_at": "2025-08-05T15:04:29.587998",
-      "tasks": [],
+      "created_at": "2025-08-05T15:06:26.346745",
+      "tasks": [
+        {
+          "id": "1754406413825",
+          "name": "Read 5 pages",
+          "size": "small",
+          "created_at": "2025-08-05T15:06:53.825267"
+        },
+        {
+          "id": "1754406425087",
+          "name": "Read 20 pages",
+          "size": "medium",
+          "created_at": "2025-08-05T15:07:05.087720"
+        },
+        {
+          "id": "1754406440477",
+          "name": "read 30 pages",
+          "size": "big",
+          "created_at": "2025-08-05T15:07:20.477793"
+        }
+      ],
       "completions": {}
     }
   ]
