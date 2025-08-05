@@ -49,7 +49,6 @@ def index():
     today = datetime.now().strftime('%Y-%m-%d')
     for habit in habits:
         habit['today_completed'] = calculate_today_completion(habit, today)
-        habit['streak'] = calculate_streak(habit)
         habit['total_completions'] = len(habit.get('completions', {}))
     
     return render_template('index.html', habits=habits, today=today)
@@ -206,27 +205,7 @@ def calculate_today_completion(habit, today):
     
     return (completed_tasks / len(habit['tasks'])) * 100
 
-def calculate_streak(habit):
-    """Calculate current streak of days with any completion"""
-    completions = habit.get('completions', {})
-    if not completions:
-        return 0
-    
-    streak = 0
-    current_date = datetime.now().date()
-    
-    while True:
-        date_str = current_date.strftime('%Y-%m-%d')
-        day_completions = completions.get(date_str, {})
-        
-        # Check if any task was completed on this day
-        if any(day_completions.values()):
-            streak += 1
-            current_date -= timedelta(days=1)
-        else:
-            break
-    
-    return streak
+
 
 def generate_calendar_data(habit, days=30):
     """Generate calendar data for the last N days"""

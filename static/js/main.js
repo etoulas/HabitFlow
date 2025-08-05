@@ -143,11 +143,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add completion streak celebration
-    const streakNumbers = document.querySelectorAll('.stat-number');
-    streakNumbers.forEach(number => {
+    // Add celebration for completion milestones
+    const statNumbers = document.querySelectorAll('.stat-number');
+    statNumbers.forEach(number => {
         const value = parseInt(number.textContent);
-        if (value > 0 && value % 7 === 0) { // Celebrate weekly milestones
+        if (value > 0 && value % 10 === 0) { // Celebrate every 10 days tracked
             number.style.animation = 'pulse 2s infinite';
         }
     });

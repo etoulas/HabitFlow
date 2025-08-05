@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a Flask-based habit tracking web application that allows users to create and manage daily or weekly habits with associated tasks. The application features a clean, responsive interface built with Bootstrap 5 and uses JSON file storage for data persistence. Users can track their progress through a visual calendar system and manage tasks of different sizes (small, medium, big) within each habit.
+This is a Flask-based habit tracking web application that allows users to create and manage daily or weekly habits with associated tasks. The application features a clean, responsive interface built with Bootstrap 5 and uses JSON file storage for data persistence. Users can track their progress through a visual calendar system and manage tasks of different sizes (small, medium, big) within each habit. The application focuses on task completion tracking without streak functionality.
 
 ## User Preferences
 
