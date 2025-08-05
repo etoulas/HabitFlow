@@ -1,3 +1,12 @@
 {
-  "habits": []
+  "habits": [
+    {
+      "id": "1754406269587",
+      "name": "Test Habit",
+      "frequency": "daily",
+      "created_at": "2025-08-05T15:04:29.587998",
+      "tasks": [],
+      "completions": {}
+    }
+  ]
 }
